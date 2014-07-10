@@ -39,4 +39,4 @@ gem 'dotenv-rails', :groups => [:development, :test]
 
 gem 'monban'
 gem 'monban-generators'
-
+gem 'pusher'
