@@ -5,11 +5,13 @@
     <%= form.text_field :message %>
   </div>
   <div>
-    <%= form.label :recipient %>
-    <%= form.select :recipient, @users %>
+    <%= form.label :recipient_id, "Send to:" %>
+    <%= form.collection_select :recipient_id, @users, :id, :email %>
   </div>
   <div>
     <%= form.submit "Send Greeting"%>
   </div>
 <% end %>
-<%# <%= render @greetings %>
+<ul>
+  <%= render @greetings %>
+</ul>

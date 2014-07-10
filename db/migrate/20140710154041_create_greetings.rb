@@ -5,7 +5,7 @@ class CreateGreetings < ActiveRecord::Migration
       t.belongs_to :recipient, index: true, null: false
       t.text :message, null: false
 
-      t.timestamps, null: false
+      t.timestamps null: false
     end
 
   end

@@ -1,5 +1,9 @@
 class User < ActiveRecord::Base
-  def to_s
-    self.email
-  end
+  has_many :received_greetings,
+    class_name: "Greeting",
+    foreign_key: :recipient_id
+
+  has_many :sent_greetings,
+    class_name: "Greeting",
+    foreign_key: :sender_id
 end
