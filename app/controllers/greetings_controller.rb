@@ -1,8 +1,8 @@
 class GreetingsController < ApplicationController
   def create
-    current_user.sent_greetings.create(greeting_params)
-    Pusher['test_channel'].trigger('my_event', { message: 'hello world' })
-  redirect_to :dashboard
+    greeting = current_user.sent_greetings.create(greeting_params)
+    html_greeting = render greeting
+    Pusher[greeting_params[:recipient_id].to_s].trigger('new_greeting', {greeting: html_greeting})
   end
 
   private
@@ -11,6 +11,12 @@ class GreetingsController < ApplicationController
     params.require(:greeting).permit(
       :message,
       :recipient_id,
+    )
+  end
+
+  def pusher_params
+    params.require(:greeting).permit(
+      :message,
     )
   end
 end

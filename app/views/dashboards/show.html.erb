@@ -9,9 +9,9 @@
     <%= form.collection_select :recipient_id, @users, :id, :email %>
   </div>
   <div>
-    <%= form.submit "Send Greeting"%>
+    <%= form.submit "Send Greeting" %>
   </div>
 <% end %>
-<ul>
+<ul id="greetings-list">
   <%= render @greetings %>
 </ul>
