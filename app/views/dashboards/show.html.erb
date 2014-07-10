@@ -1,0 +1,15 @@
+<div>
+  <%= form_for @greeting do |form| %>
+    <div>
+    <%= form.label :message %>
+    <%= form.text_field :message %>
+  </div>
+  <div>
+    <%= form.label :recipient %>
+    <%= form.select :recipient, @users %>
+  </div>
+  <div>
+    <%= form.submit "Send Greeting"%>
+  </div>
+<% end %>
+<%# <%= render @greetings %>

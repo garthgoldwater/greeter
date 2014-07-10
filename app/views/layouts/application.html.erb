@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Greeter</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<h2>Greeter</h2>
+    <% if signed_in? %><div> signed in as <%= current_user.email %>. </div> <% end %>
+<%= yield %>
+
+</body>
+</html>
