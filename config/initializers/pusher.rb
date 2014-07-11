@@ -5,3 +5,6 @@ Pusher.key = ENV['PUSHER_KEY']
 Pusher.secret = ENV['PUSHER_SECRET']
 
 Pusher.logger = Rails.logger
+
+
+Pusher['my-channel'].trigger('my-event', {message: "hello"});

@@ -20,3 +20,4 @@ class GreetingsController < ApplicationController
     )
   end
 end
+
