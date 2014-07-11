@@ -7,8 +7,10 @@
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 <%= csrf_meta_tags %>
 <script>
+<% if signed_in? %>
 window.CHANNEL = "<%= current_user.id %>";
 window.PUSHER = "<%= ENV['PUSHER_KEY'] %>";
+<% end %>
 </script>
 </head>
 <body>
